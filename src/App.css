@@ -1,0 +1,39 @@
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #0d6efd !important;
+}
+
+.nav-link {
+  color: #333 !important;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* Container padding */
+.container {
+  padding-bottom: 50px;
+}
+
+/* Footer placeholder */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #777;
+}
+
+/* Page titles */
+h2 {
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
