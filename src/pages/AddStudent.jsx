@@ -29,28 +29,54 @@ const AddStudent = () => {
   };
 
   return (
-    <Layout>
-      <h2>Add Student</h2>
+  <Layout>
+    <div className="card">
+      <h2 style={{ textAlign: "center", color: "#0d3b66" }}>
+        Add Student
+      </h2>
+
       <form onSubmit={studenthandler}>
-        <label>First Name</label>
-        <input type="text" value={firstname} onChange={(e) => setfirstname(e.target.value)} />
-        <label>Last Name</label>
-        <input type="text" value={lastname} onChange={(e) => setlastname(e.target.value)} />
-        <label>Phone Number</label>
-        <input type="text" value={phonenumber} onChange={(e) => setphonenumber(e.target.value)} />
-        <label>Branch</label>
-        <input type="text" value={branch} onChange={(e) => setbranch(e.target.value)} />
-        <label>College</label>
-        <input type="text" value={college} onChange={(e) => setcollege(e.target.value)} />
-        <label>Location</label>
-        <input type="text" value={location} onChange={(e) => setlocation(e.target.value)} />
-        <label>Fees</label>
-        <input type="text" value={fees} onChange={(e) => setfees(e.target.value)} />
-        <button type="submit">Submit Student</button>
+        <div className="form-group">
+          <input type="text" placeholder="First Name" value={firstname} onChange={(e) => setfirstname(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setlastname(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="Phone Number" value={phonenumber} onChange={(e) => setphonenumber(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="Branch" value={branch} onChange={(e) => setbranch(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="College" value={college} onChange={(e) => setcollege(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="Location" value={location} onChange={(e) => setlocation(e.target.value)} />
+        </div>
+
+        <div className="form-group">
+          <input type="text" placeholder="Fees" value={fees} onChange={(e) => setfees(e.target.value)} />
+        </div>
+
+        <button type="submit" className="btn-blue">
+          Submit Student
+        </button>
       </form>
-      {message && <p className={message.includes("success") ? "success-msg" : "error-msg"}>{message}</p>}
-    </Layout>
-  );
+
+      {message && (
+        <p className={message.includes("success") ? "success-msg" : "error-msg"}>
+          {message}
+        </p>
+      )}
+    </div>
+  </Layout>
+);
 };
 
 export default AddStudent;

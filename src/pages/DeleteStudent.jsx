@@ -36,17 +36,49 @@ const DeleteStudent = () => {
   if (loading) return <p>Loading students...</p>;
 
   return (
-    <Layout>
-      <h2>Delete Students</h2>
-      {error && <p className="error-msg">{error}</p>}
-      {studentdetails.map(student => (
-        <div className="student-item" key={student.id}>
-          <span>{student.id} - {student.firstname} {student.lastname}</span>
-          <button onClick={() => handledelete(student.id)}>Delete</button>
+  <Layout>
+    <div className="card">
+      <h2 className="text-center mb-4" style={{ color: "#0d3b66" }}>
+        Delete Students
+      </h2>
+
+      {error && <p className="error-msg text-center">{error}</p>}
+      {loading && <p className="text-center">Loading students...</p>}
+
+      {studentdetails.length > 0 && (
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {studentdetails.map((student) => (
+                <tr key={student.id}>
+                  <td>{student.id}</td>
+                  <td>{student.firstname}</td>
+                  <td>{student.lastname}</td>
+                  <td>
+                    <button
+                      className="btn-blue"
+                      onClick={() => handledelete(student.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      ))}
-    </Layout>
-  );
+      )}
+    </div>
+  </Layout>
+);
 };
 
 export default DeleteStudent;

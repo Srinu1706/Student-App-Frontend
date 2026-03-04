@@ -21,21 +21,57 @@ const ViewStudents = () => {
     }
   };
 
-  return (
-    <Layout>
-      <h2>View Students</h2>
-      <button onClick={handleGetstudnets}>Get All Students</button>
-      {loading && <p>Loading students...</p>}
-      {error && <p className="error-msg">{error}</p>}
-      {studentdetails.map((e) => (
-        <div className="student-item" key={e.id}>
-          <span>
-            {e.firstname} {e.lastname} | {e.phonenumber} | {e.branch} | {e.college} | {e.location} | {e.fees}
-          </span>
+ return (
+  <Layout>
+    <div className="card">
+      <h2 className="text-center mb-4" style={{ color: "#0d3b66" }}>
+        View Students
+      </h2>
+
+      <div className="text-center mb-3">
+        <button className="btn-blue" onClick={handleGetstudnets}>
+          Get All Students
+        </button>
+      </div>
+
+      {loading && <p className="text-center">Loading students...</p>}
+      {error && <p className="error-msg text-center">{error}</p>}
+
+      {studentdetails.length > 0 && (
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Phone</th>
+                <th>Branch</th>
+                <th>College</th>
+                <th>Location</th>
+                <th>Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              {studentdetails.map((e) => (
+                <tr key={e.id}>
+                  <td>{e.id}</td>
+                  <td>{e.firstname}</td>
+                  <td>{e.lastname}</td>
+                  <td>{e.phonenumber}</td>
+                  <td>{e.branch}</td>
+                  <td>{e.college}</td>
+                  <td>{e.location}</td>
+                  <td>{e.fees}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      ))}
-    </Layout>
-  );
+      )}
+    </div>
+  </Layout>
+);
 };
 
 export default ViewStudents;

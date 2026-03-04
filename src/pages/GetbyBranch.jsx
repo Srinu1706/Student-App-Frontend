@@ -26,20 +26,66 @@ const GetbyBranch = () => {
   };
 
   return (
-    <Layout>
-      <h2>Get Students By Branch</h2>
-      <input type="text" placeholder="Enter branch" value={branch} onChange={(e) => setbranch(e.target.value)} />
-      <button onClick={getByBranch}>Search</button>
-      {loading && <p>Loading students...</p>}
-      {error && <p className="error-msg">{error}</p>}
-      {search && !loading && studentdetails.length === 0 && <p>No students found</p>}
-      {studentdetails.map(e => (
-        <div className="student-item" key={e.id}>
-          {e.firstname} {e.lastname} | {e.phonenumber} | {e.branch} | {e.college} | {e.location} | {e.fees}
+  <Layout>
+    <div className="card">
+      <h2 className="text-center mb-4" style={{ color: "#0d3b66" }}>
+        Get Students By Branch
+      </h2>
+
+      <div className="d-flex gap-3 mb-4">
+        <input
+          type="text"
+          placeholder="Enter branch"
+          value={branch}
+          onChange={(e) => setbranch(e.target.value)}
+        />
+        <button className="btn-blue" onClick={getByBranch}>
+          Search
+        </button>
+      </div>
+
+      {loading && <p className="text-center">Loading students...</p>}
+      {error && <p className="error-msg text-center">{error}</p>}
+      {search && !loading && studentdetails.length === 0 && (
+        <p className="text-center">No students found</p>
+      )}
+
+      {studentdetails.length > 0 && (
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Phone</th>
+                <th>Branch</th>
+                <th>College</th>
+                <th>Location</th>
+                <th>Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              {studentdetails.map((e) => (
+                <tr key={e.id}>
+                  <td>{e.id}</td>
+                  <td>{e.firstname}</td>
+                  <td>{e.lastname}</td>
+                  <td>{e.phonenumber}</td>
+                  <td>{e.branch}</td>
+                  <td>{e.college}</td>
+                  <td>{e.location}</td>
+                  <td>{e.fees}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      ))}
-    </Layout>
-  );
+      )}
+    </div>
+  </Layout>
+);
+  
 };
 
 export default GetbyBranch;

@@ -1,0 +1,44 @@
+.card-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f5ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.success-msg {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0b5ed7;
+}

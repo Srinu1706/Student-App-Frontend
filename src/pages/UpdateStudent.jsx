@@ -41,89 +41,89 @@ const UpdateStudent = () => {
     }
   };
 
-  return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4 text-primary">Update Student</h2>
+return (
+  <div className="container">
+    <div className="card">
+      <h2>Update Student</h2>
+
       <form onSubmit={handlepatch}>
-        <div className="row mb-3">
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Student ID"
-              onChange={(e) => setid(e.target.value)}
-            />
-          </div>
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="First Name"
-              onChange={(e) => setfirstname(e.target.value)}
-            />
-          </div>
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Last Name"
-              onChange={(e) => setlastname(e.target.value)}
-            />
-          </div>
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Phone Number"
-              onChange={(e) => setphonenumber(e.target.value)}
-            />
-          </div>
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Branch"
-              onChange={(e) => setbranch(e.target.value)}
-            />
-          </div>
-          <div className="col-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="College"
-              onChange={(e) => setcollege(e.target.value)}
-            />
-          </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Student ID (Required)"
+            onChange={(e) => setid(e.target.value)}
+          />
         </div>
 
-        <div className="row mb-3">
-          <div className="col-md-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Location"
-              onChange={(e) => setlocation(e.target.value)}
-            />
-          </div>
-          <div className="col-md-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Fees"
-              onChange={(e) => setfees(e.target.value)}
-            />
-          </div>
-          <div className="col-md-3">
-            <button type="submit" className="btn btn-primary w-100">
-              Update Student
-            </button>
-          </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="First Name"
+            onChange={(e) => setfirstname(e.target.value)}
+          />
         </div>
 
-        {message && <h5 className="text-success">{message}</h5>}
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Last Name"
+            onChange={(e) => setlastname(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Phone Number"
+            onChange={(e) => setphonenumber(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Branch"
+            onChange={(e) => setbranch(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="College"
+            onChange={(e) => setcollege(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Location"
+            onChange={(e) => setlocation(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Fees"
+            onChange={(e) => setfees(e.target.value)}
+          />
+        </div>
+
+        <button type="submit" className="btn-blue">
+          Update Student
+        </button>
+
+        {message && (
+          <p className="success-msg" style={{ marginTop: "15px" }}>
+            {message}
+          </p>
+        )}
       </form>
     </div>
-  );
+  </div>
+);
 };
 
 export default UpdateStudent;
