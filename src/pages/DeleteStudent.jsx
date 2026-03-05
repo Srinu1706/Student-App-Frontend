@@ -9,7 +9,7 @@ const DeleteStudent = () => {
   const fetchStudents = async () => {
     setloading(true);
     try {
-      const response = await fetch("http://localhost:8080/getstudentdetails");
+      const response = await fetch("https://student-crud-operations-with-springboot.onrender.com/getstudentdetails");
       if (!response.ok) throw new Error("Failed to fetch students");
       const data = await response.json();
       setstudentdetails(data);
