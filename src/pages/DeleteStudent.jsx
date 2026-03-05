@@ -24,7 +24,7 @@ const DeleteStudent = () => {
 
   const handledelete = async (id) => {
     try {
-      const response = await fetch(`https://student-crud-operations-with-springboot.onrender.com/delete/delete/${id}`, { method: "DELETE" });
+      const response = await fetch(`https://student-crud-operations-with-springboot.onrender.com/delete/${id}`, { method: "DELETE" });
       if (!response.ok) alert("Failed to delete student");
       else {
         alert("Student deleted successfully");
