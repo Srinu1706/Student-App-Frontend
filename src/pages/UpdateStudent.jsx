@@ -28,7 +28,7 @@ const UpdateStudent = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/update/${id}`, {
+      const response = await fetch(`https://student-crud-operations-with-springboot.onrender.com/update/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentspatch),

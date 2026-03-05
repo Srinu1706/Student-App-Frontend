@@ -16,7 +16,7 @@ const AddStudent = () => {
   const studenthandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/create", {
+      const response = await fetch("https://student-crud-operations-with-springboot.onrender.com/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentDetails),

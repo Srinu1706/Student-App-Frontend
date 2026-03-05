@@ -10,7 +10,7 @@ const ViewStudents = () => {
     try {
       setLoading(true);
       seterror("");
-      const response = await fetch("http://localhost:8080/getstudentdetails");
+      const response = await fetch("https://student-crud-operations-with-springboot.onrender.com/getstudentdetails");
       if (!response.ok) throw new Error("Failed to fetch data");
       const data = await response.json();
       setstudentdetails(data);

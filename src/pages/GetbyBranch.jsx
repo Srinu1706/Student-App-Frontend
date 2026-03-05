@@ -13,7 +13,7 @@ const GetbyBranch = () => {
     setLoading(true);
     seterror("");
     try {
-      const response = await fetch(`http://localhost:8080/students/${branch}`);
+      const response = await fetch(`https://student-crud-operations-with-springboot.onrender.com/students/${branch}`);
       if (!response.ok) throw new Error("Failed to fetch students");
       const data = await response.json();
       setstudentdetails(data);
