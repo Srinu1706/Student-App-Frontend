@@ -15,7 +15,7 @@ body {
 }
 
 
-/* ================= NAVBAR ================= */
+
 
 .navbar {
   position: sticky;
@@ -49,7 +49,7 @@ body {
 }
 
 
-/* ================= CONTAINER ================= */
+
 
 .container {
   width: 100%;
@@ -63,7 +63,7 @@ body {
 }
 
 
-/* ================= CARD ================= */
+
 
 .card-container {
   width: 100%;
@@ -94,7 +94,7 @@ body {
 }
 
 
-/* ================= FORM ================= */
+
 
 .form-group {
   margin-bottom: 18px;
@@ -115,7 +115,7 @@ input:focus {
 }
 
 
-/* ================= BUTTON ================= */
+
 
 .btn-blue {
   width: 100%;
@@ -135,7 +135,7 @@ input:focus {
 }
 
 
-/* ================= TABLE ================= */
+
 
 .table-wrapper {
   margin-top: 25px;
@@ -168,7 +168,7 @@ tr:hover {
 }
 
 
-/* ================= MESSAGES ================= */
+
 
 .success-msg {
   color: green;
@@ -186,9 +186,7 @@ tr:hover {
 
 
 
-/* ============================================
-           MOBILE RESPONSIVE
-============================================ */
+
 
 @media (max-width: 768px) {
 
@@ -236,9 +234,7 @@ tr:hover {
 
 
 
-/* ============================================
-           SMALL MOBILE
-============================================ */
+
 
 @media (max-width: 480px) {
 
@@ -262,4 +258,50 @@ tr:hover {
     font-size: 13px;
   }
 
+}
+/* Toggle menu */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    position: absolute;
+    top: 65px;
+    left: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+  }
 }
